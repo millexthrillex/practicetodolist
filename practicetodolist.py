@@ -10,6 +10,9 @@
 # all tasks will be entered by the user
 # report # of tasks 
 
+
+from os import system
+
 def elicitInt(_min, _max):
     valid = False
 
@@ -29,6 +32,8 @@ def elicitInt(_min, _max):
 
     return _in
 
+
+
 def printMenu(): 
     print("1) Add 2) List 3) Delete 4) Count Tasks 5) Quit ")
 
@@ -38,18 +43,26 @@ def acceptMenuInput():
     return elicitInt(1, 5)
 
 
-def handleInput(userinput):
-    print("Quitting")
+def handleInput(userInput):
+    print(userInput)
     return True
 
 def main():
     _quit = False
 
+    system("clear")
+
     while not _quit:
         printMenu()
+       
 
         userInput = acceptMenuInput()
+
+        system("clear")
+
         _quit = handleInput(userInput)
+
+    print("Bye")
 
 
 if __name__ == "__main__":
