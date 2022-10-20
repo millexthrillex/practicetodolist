@@ -11,7 +11,23 @@
 # report # of tasks 
 
 
+def printMenu(): pass
+def acceptInput(): pass
+
+
+def handleInput(userinput):
+    print("Quitting")
+    return True
+
+def main():
+    _quit = False
+
+    while not _quit:
+        printMenu()
+
+        userInput = acceptInput()
+        _quit = handleInput(userInput)
 
 
 if __name__ == "__main__":
-    print("Do something")
+    main()
