@@ -10,7 +10,7 @@
 # all tasks will be entered by the user
 # report # of tasks 
 
-
+import os
 from os import system
 
 def elicitInt(_min, _max):
@@ -40,15 +40,23 @@ def printMenu():
 
 
 def acceptMenuInput():
-    return elicitInt(1, 5)
+    return elicitInt(1, 5, "Select a menu item: ")
 
 
 def handleInput(userInput):
     print(userInput)
-    return True
+    
+    return userInput == 5
 
 def main():
     _quit = False
+    
+    if os.name == 'posix':
+        clearCommand = "clear"
+    elif os.name == 'nt':
+        clearCommand = "cls"
+    
+    system(clearCommand)
 
     system("clear")
 
